@@ -1,0 +1,17 @@
+img{
+    display: block;
+    margin: auto;
+}
+.button{
+    margin-left: 60%;
+    display: inline-flex;
+    margin-top:1%
+    
+
+}
+.button #b1{
+    
+    margin-left: 50%;
+    /* background-image: linear-gradient(to right, #22ADE2,#22ADE2, #22ADE2); */
+
+}

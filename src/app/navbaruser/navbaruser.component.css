@@ -1,0 +1,7 @@
+.container-fluid ul li a  {
+    color: white;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item{
+    color: black;
+}

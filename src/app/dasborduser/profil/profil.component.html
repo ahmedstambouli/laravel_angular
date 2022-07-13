@@ -1,0 +1,82 @@
+<app-navbaruser></app-navbaruser>
+
+<div class="container content">
+
+    <div class="row">
+        <div class="col-md-8 box">
+
+            <div class="row"><span style="font-size: 35px;">Edit profil</span></div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div [class]="alert" >{{message}}</div>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" placeholder="email" name="email" [(ngModel)]="User.email">
+                    <div class="error">
+                    {{messageEmail}}
+                </div>
+                </div>
+            
+                <div class="col form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder=" name" name="name" [(ngModel)]="User.name">
+                    <div class="error">
+                {{messagename}}
+            </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col form-group">
+                    <label>New password</label>
+                    <input type="password" class="form-control" placeholder="Newpassword" name="password" [(ngModel)]="User.password">
+                    <div class="error">
+            {{messagepassword}}
+            </div>
+                </div>
+
+            </div>
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <div class="p-2 bd-highlight">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" (click)="updateuser()"> Update Profil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col box2 ">
+            <img src="../assets/img/photo_c.jpg" class="img-couvertur" alt="">
+            <div class="d-flex justify-content-center">
+                <img src="../../../assets/img/photo_profil.jpg" class="img-profil">
+
+            </div>
+            <div class="d-flex justify-content-center">
+                <span style="margin-top: 2%; font-size: large; font-size:20px;  color: black;">
+                {{User.name}}</span>
+                
+            </div>
+
+            <div class="row">
+                <div class="col"><span style="font-size: 14px"><b>Phone Number:</b><br> phoneNumber</span></div>
+                <div class="col"><span style="font-size: 14px"><b>Location:</b> <br>user.location</span></div>
+            </div>
+            <div class="row">
+                <div class="col"><span style="font-size: 14px"><b>Role:</b><br>{{User.role}}</span></div>
+                <div class="col"><span style="font-size: 14px"><b>Email:</b><br>{{User.email}}</span></div>
+            </div>
+
+
+        </div>
+
+    </div>

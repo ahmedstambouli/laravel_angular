@@ -1,0 +1,58 @@
+<app-navbarhomme></app-navbarhomme>
+<div class="container">
+
+    <div class="register">
+
+        <div class="logo">
+            <img src="../../assets/img/register.png" alt="">
+        </div>
+        <div class="form">
+            <img src="../assets/img/avatr.png">
+            <h2 class="title">Register</h2>
+            <div [class]="alert">{{message}}</div>
+
+            <form [formGroup]="form"  >
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control"  placeholder="Name" formControlName="name" >
+                    <label for="floatingInput">Name</label>
+
+                    <small style="margin-right: 50%;" class="error" *ngIf="form.get('name')?.errors?.required && form.get('name').touched">
+                        Name is required
+                      </small>
+                    
+                  </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                    <label for="floatingInput">Email address</label>
+
+                    <div class="error" style="margin-right: 50%;">
+                        <small *ngIf="form.get('email')?.errors?.required && form.get('email').touched">Email is is
+                          required</small>
+                        <small *ngIf="form.get('email')?.errors?.pattern && form.get('email').touched">Not Email</small>
+                      </div>
+
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password" >
+                    <label for="floatingPassword">Password</label>
+                    
+                        <small style="margin-right: 50%;" class="error" *ngIf="form.get('password')?.errors?.required && form.get('password').touched ">
+                          Password is required
+                        </small>
+                  </div>
+
+                <a routerLink="/login">You have an account?</a>
+               
+                    <button type="submit" class="btn"  (click)="Register()">
+                Register
+            </button>
+               
+            </form>
+
+
+            
+        </div>
+
+
+    </div>
+</div>

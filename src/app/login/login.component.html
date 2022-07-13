@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<app-navbarhomme></app-navbarhomme>
+<div class="container">
+    <div class="img">
+        <a href="index.php"><img src="../assets/img/login.png"></a>
+    </div>
+    <div class="login-content">
+        <div class="form">
+            <img src="../assets/img/avatr.png">
+
+            <h2 class="title">Welcome</h2>
+
+            <form [formGroup]="form" >
+                <div class="row">
+                    <div [class]="alert" >
+                        {{message}}
+                    </div>
+                </div>
+               
+                <div class="div">
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                        <label for="floatingInput">Email address</label>
+    
+                        <div class="error" style="margin-right: 50%;">
+                            <small *ngIf="form.get('email')?.errors?.required && form.get('email').touched">Email is is
+                              required</small>
+                            <small *ngIf="form.get('email')?.errors?.pattern && form.get('email').touched">Not Email</small>
+                          </div>
+    
+                      </div>
+                      <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password" >
+                        <label for="floatingPassword">Password</label>
+                        
+                            <small style="margin-right: 50%;" class="error" *ngIf="form.get('password')?.errors?.required && form.get('password').touched ">
+                              Password is required
+                            </small>
+                          
+                           
+                       
+                        </div>
+                </div>
+
+
+                <a routerLink="/register">Creat user account?</a><br>
+                <button type="submit" class="btn btn-primary"  (click)="Login()" >Login</button><br> <br>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+</div>

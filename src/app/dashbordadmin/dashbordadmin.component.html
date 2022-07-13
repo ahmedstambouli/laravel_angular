@@ -1,0 +1,117 @@
+<app-navbaradmin></app-navbaradmin>
+
+
+   
+
+
+
+
+<div class="container">
+
+    <div class="content"><br>
+        
+        
+        <div class="row">
+            <div class="col-md c1">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>User Active</h2>
+                        <h1>{{user-usernot}}</h1>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h1><i class='bx bx-stats'></i></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md c2">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>User Not Active</h3>
+                        <h1>{{usernot}}</h1>
+                    </div>
+                    <div class="col-md-4">
+                        <h1><i class='bx bxs-calendar-event'></i></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md c3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>Total Users</h2>
+                        <h1>{{user}}</h1>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <br>
+
+<!-- Register -->
+    <div class="row">
+        <h1 class="d-flex justify-content-center " style="margin-top:2%;">Register User</h1>
+    </div>
+    <form [formGroup]="form">
+    <div class="row" style="margin-top:2%;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col"><div [class]="alert">{{message}}</div></div>
+            <div class="col-md-2"></div>
+        </div>
+        
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control"  placeholder="Name" formControlName="name" >
+                <label for="floatingInput">Name</label>
+
+                <small style="margin-right: 50%;" class="error" *ngIf="form.get('name')?.errors?.required && form.get('name').touched">
+                    Name is required
+                  </small>
+                
+                </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                <label for="floatingInput">Email address</label>
+
+                <div class="error" style="margin-right: 50%;">
+                    <small *ngIf="form.get('email')?.errors?.required && form.get('email').touched">Email is is
+                      required</small>
+                    <small *ngIf="form.get('email')?.errors?.pattern && form.get('email').touched">Not Email</small>
+                  </div>
+
+              </div>
+        </div>
+        <div class="col">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password" >
+                <label for="floatingPassword">Password</label>
+                    <small style="margin-right: 50%;" class="error" *ngIf="form.get('password')?.errors?.required && form.get('password').touched ">
+                      Password is required
+                    </small>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Role</label>
+                    <select class="form-control" formControlName="role">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn" (click)="Register()" >
+                Register
+            </button>
+        </div>
+    </div>
+    </form>
+</div>
+<app-listusers></app-listusers>
